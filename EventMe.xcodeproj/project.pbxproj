@@ -9,21 +9,32 @@
 /* Begin PBXBuildFile section */
 		841F65112AB4AF3000854BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F65102AB4AF3000854BA7 /* AppDelegate.swift */; };
 		841F65132AB4AF3000854BA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F65122AB4AF3000854BA7 /* SceneDelegate.swift */; };
-		841F65152AB4AF3000854BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F65142AB4AF3000854BA7 /* ViewController.swift */; };
+		841F65152AB4AF3000854BA7 /* EventMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F65142AB4AF3000854BA7 /* EventMe.swift */; };
 		841F65182AB4AF3000854BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841F65162AB4AF3000854BA7 /* Main.storyboard */; };
 		841F651A2AB4AF3500854BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841F65192AB4AF3500854BA7 /* Assets.xcassets */; };
 		841F651D2AB4AF3500854BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841F651B2AB4AF3500854BA7 /* LaunchScreen.storyboard */; };
+		841F65252AB8FE2800854BA7 /* EventMeTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F65242AB8FE2700854BA7 /* EventMeTableDelegate.swift */; };
+		841F65282AB8FEE100854BA7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 841F65272AB8FEE100854BA7 /* Alamofire */; };
+		841F652A2AB8FEFF00854BA7 /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F65292AB8FEFF00854BA7 /* Tap.swift */; };
+		841F652E2AB8FFE300854BA7 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F652D2AB8FFE300854BA7 /* Events.swift */; };
+		841F65312AB9005900854BA7 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F652F2AB9005900854BA7 /* EventCell.swift */; };
+		841F65322AB9005900854BA7 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841F65302AB9005900854BA7 /* EventCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		841F650D2AB4AF3000854BA7 /* EventMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841F65102AB4AF3000854BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841F65122AB4AF3000854BA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		841F65142AB4AF3000854BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		841F65142AB4AF3000854BA7 /* EventMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMe.swift; sourceTree = "<group>"; };
 		841F65172AB4AF3000854BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		841F65192AB4AF3500854BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841F651C2AB4AF3500854BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		841F651E2AB4AF3500854BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841F65242AB8FE2700854BA7 /* EventMeTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMeTableDelegate.swift; sourceTree = "<group>"; };
+		841F65292AB8FEFF00854BA7 /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
+		841F652D2AB8FFE300854BA7 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		841F652F2AB9005900854BA7 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		841F65302AB9005900854BA7 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841F65282AB8FEE100854BA7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +70,34 @@
 			children = (
 				841F65102AB4AF3000854BA7 /* AppDelegate.swift */,
 				841F65122AB4AF3000854BA7 /* SceneDelegate.swift */,
-				841F65142AB4AF3000854BA7 /* ViewController.swift */,
+				841F65142AB4AF3000854BA7 /* EventMe.swift */,
+				841F65242AB8FE2700854BA7 /* EventMeTableDelegate.swift */,
+				841F65292AB8FEFF00854BA7 /* Tap.swift */,
+				841F652B2AB8FFB300854BA7 /* Models */,
+				841F652C2AB8FFC300854BA7 /* TableCells */,
 				841F65162AB4AF3000854BA7 /* Main.storyboard */,
 				841F65192AB4AF3500854BA7 /* Assets.xcassets */,
 				841F651B2AB4AF3500854BA7 /* LaunchScreen.storyboard */,
 				841F651E2AB4AF3500854BA7 /* Info.plist */,
 			);
 			path = EventMe;
+			sourceTree = "<group>";
+		};
+		841F652B2AB8FFB300854BA7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				841F652D2AB8FFE300854BA7 /* Events.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		841F652C2AB8FFC300854BA7 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				841F652F2AB9005900854BA7 /* EventCell.swift */,
+				841F65302AB9005900854BA7 /* EventCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +116,9 @@
 			dependencies = (
 			);
 			name = EventMe;
+			packageProductDependencies = (
+				841F65272AB8FEE100854BA7 /* Alamofire */,
+			);
 			productName = EventMe;
 			productReference = 841F650D2AB4AF3000854BA7 /* EventMe.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +147,9 @@
 				Base,
 			);
 			mainGroup = 841F65042AB4AF3000854BA7;
+			packageReferences = (
+				841F65262AB8FEE100854BA7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 841F650E2AB4AF3000854BA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841F65322AB9005900854BA7 /* EventCell.xib in Resources */,
 				841F651D2AB4AF3500854BA7 /* LaunchScreen.storyboard in Resources */,
 				841F651A2AB4AF3500854BA7 /* Assets.xcassets in Resources */,
 				841F65182AB4AF3000854BA7 /* Main.storyboard in Resources */,
@@ -138,9 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841F65152AB4AF3000854BA7 /* ViewController.swift in Sources */,
+				841F652E2AB8FFE300854BA7 /* Events.swift in Sources */,
+				841F65252AB8FE2800854BA7 /* EventMeTableDelegate.swift in Sources */,
+				841F65152AB4AF3000854BA7 /* EventMe.swift in Sources */,
+				841F652A2AB8FEFF00854BA7 /* Tap.swift in Sources */,
 				841F65112AB4AF3000854BA7 /* AppDelegate.swift in Sources */,
 				841F65132AB4AF3000854BA7 /* SceneDelegate.swift in Sources */,
+				841F65312AB9005900854BA7 /* EventCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +402,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		841F65262AB8FEE100854BA7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		841F65272AB8FEE100854BA7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 841F65262AB8FEE100854BA7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 841F65052AB4AF3000854BA7 /* Project object */;
 }
