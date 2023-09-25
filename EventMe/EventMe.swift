@@ -18,7 +18,7 @@ class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         
         var tableData = ["1", "2", "3", "4"]
         
-        let token = "hwFPPc9KmSUdEeZv8z3ScVdLZFpHnyHwcrUTwT1KTj3udLkjhUb-unaAj3mDrNpymuLp-et0NrCoiCbWPQPJYhxq_fJX5btBrLCxTVVWAFRjusZF7xWoSnUj76kRZXYx"
+        let token = "37ayPhhA3QBrYhKjSnEzolZvKwGowA4VkJWSro6dq09by_jXBL-db-2ygGCX4osuKI7MT-VPQZTHg48ohf7dac2gKVESPOAjOAehDLoAoZSnZXwqZCub2pJ6jJ7HZHYx"
 
         override func viewDidLoad() {
             
