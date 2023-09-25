@@ -148,7 +148,7 @@
 			);
 			mainGroup = 841F65042AB4AF3000854BA7;
 			packageReferences = (
-				841F65262AB8FEE100854BA7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				841F65262AB8FEE100854BA7 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
 			);
 			productRefGroup = 841F650E2AB4AF3000854BA7 /* Products */;
 			projectDirPath = "";
@@ -404,7 +404,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		841F65262AB8FEE100854BA7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		841F65262AB8FEE100854BA7 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -417,7 +417,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		841F65272AB8FEE100854BA7 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 841F65262AB8FEE100854BA7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 841F65262AB8FEE100854BA7 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

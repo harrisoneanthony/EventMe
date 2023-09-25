@@ -9,6 +9,12 @@ import UIKit
 
 class EventCell: UITableViewCell {
 
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var address1: UILabel!
+    
+    @IBOutlet var cityStateZip: UILabel!
+    @IBOutlet var url: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

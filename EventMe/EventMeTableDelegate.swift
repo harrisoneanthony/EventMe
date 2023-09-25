@@ -18,16 +18,16 @@ extension EventMe {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.event.count
+        return self.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? EventCell {
             
-            let event = self.event[indexPath.row]
+            let event = self.events[indexPath.row]
             
-            cell.name.text          = event.name
+            cell.descriptionLabel.text          = event.description
             cell.address1.text      = event.location.address1
             cell.cityStateZip.text  =
                 String(format: "%@ %@  %@",
@@ -36,10 +36,9 @@ extension EventMe {
                        event.location.zip_code)
             cell.url.text           = "Website"
             cell.url.textColor      = .systemBlue
-            createUrl(label: cell.url, urlString: event.url)
-            
+            createUrl(label: cell.url, urlString: events.event_site_url)
+
             return cell
-            
         }
         return UITableViewCell()
     }

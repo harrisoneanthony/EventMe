@@ -14,11 +14,11 @@ class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         @IBOutlet var tableView: UITableView!
         @IBOutlet var barSearch: UISearchBar!
 
-        var events  = [Event]()
+        var events  = [Events]()
         
         var tableData = ["1", "2", "3", "4"]
         
-        let token = "37ayPhhA3QBrYhKjSnEzolZvKwGowA4VkJWSro6dq09by_jXBL-db-2ygGCX4osuKI7MT-VPQZTHg48ohf7dac2gKVESPOAjOAehDLoAoZSnZXwqZCub2pJ6jJ7HZHYx"
+        let token = "hwFPPc9KmSUdEeZv8z3ScVdLZFpHnyHwcrUTwT1KTj3udLkjhUb-unaAj3mDrNpymuLp-et0NrCoiCbWPQPJYhxq_fJX5btBrLCxTVVWAFRjusZF7xWoSnUj76kRZXYx"
 
         override func viewDidLoad() {
             
@@ -30,7 +30,7 @@ class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
      
         }
         
-        func fetchEventsFromAddress(_ address: String, completion:@escaping(_ success: Bool, _ businesses: [Business]?)->()) {
+        func fetchEventsFromAddress(_ address: String, completion:@escaping(_ success: Bool, _ events: [Events]?)->()) {
             
             let geocoder = CLGeocoder()
             geocoder.geocodeAddressString(address) {
@@ -48,7 +48,7 @@ class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
                         success, events in
                         
                         if success {
-                            completion(true, businesses)
+                            completion(true, events)
                         } else {
                             completion(false, nil)
                         }
@@ -61,13 +61,14 @@ class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
             
         }
         
-        func fetchEvents(lat: Double, lng: Double, completion: @escaping(_ success: Bool, _ businesses: [Business]?) -> ()) {
+        func fetchEvents(lat: Double, lng: Double, completion: @escaping(_ success: Bool, _ events: [Events]?) -> ()) {
             
-            let headers = [
-                "Authorization" : String(format: "Bearer %@", token),
-                "Content-Type": "application/json"
-            ]
-            Alamofire.request( "https://api.yelp.com/v3/events/search?sort_by=best_match&limit=20&latitude=\(lat)&longitude=\(lng)", headers: headers)
+            let headers: HTTPHeaders = [
+                    "Authorization" : String(format: "Bearer %@", token),
+                    "Content-Type": "application/json"
+                ]
+            
+            AF.request( "https://api.yelp.com/v3/events/search?sort_by=best_match&limit=20&latitude=\(lat)&longitude=\(lng)", headers: headers)
                 .response { response in
 
                 if let data = response.data,
@@ -113,7 +114,7 @@ class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             searchBar.searchTextField.text = ""
-            self.events = [Event]()
+            self.events = [Events]()
             self.tableView.reloadData()
         }
     }
