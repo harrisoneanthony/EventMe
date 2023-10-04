@@ -9,23 +9,22 @@ import UIKit
 
 class EventCell: UITableViewCell {
 
-    @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet var address1: UILabel!
-    
+    @IBOutlet var descr: UILabel!
+    @IBOutlet var address: UILabel!
     @IBOutlet var cityStateZip: UILabel!
     @IBOutlet var url: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        self.name.font = UIFont(name: "HelveticaNeue-Bold",
-//                                size: 20.0)
-//        self.address1.font = UIFont(name: "HelveticaNeue",
-//                                size: 18.0)
-//        self.cityStateZip.font = UIFont(name: "HelveticaNeue",
-//                                size: 18.0)
-//        self.url.font = UIFont(name: "HelveticaNeue",
-//                                size: 18.0)
+        self.descr.font = UIFont(name: "HelveticaNeue-Bold",
+                                size: 20.0)
+        self.address.font = UIFont(name: "HelveticaNeue",
+                                size: 18.0)
+        self.cityStateZip.font = UIFont(name: "HelveticaNeue",
+                                size: 18.0)
+        self.url.font = UIFont(name: "HelveticaNeue",
+                                size: 18.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

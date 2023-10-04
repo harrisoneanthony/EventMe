@@ -14,7 +14,7 @@ extension EventMe {
         self.tableView.delegate     = self
         self.tableView.dataSource   = self
         
-        tableView.register(UINib(nibName: "EvemtCell", bundle: nil), forCellReuseIdentifier: "EventCell")
+        tableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "EventCell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,18 +25,19 @@ extension EventMe {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? EventCell {
             
+
             let event = self.events[indexPath.row]
-            
-            cell.descriptionLabel.text          = event.description
-            cell.address1.text      = event.location.address1
-            cell.cityStateZip.text  =
-                String(format: "%@ %@  %@",
-                       event.location.city,
-                       event.location.state,
-                       event.location.zip_code)
-            cell.url.text           = "Website"
-            cell.url.textColor      = .systemBlue
-            createUrl(label: cell.url, urlString: events.event_site_url)
+            print(event)
+            cell.descr.text = event.descr
+            cell.address.text = event.location.address1
+//            cell.cityStateZip.text  =
+//                String(format: "%@ %@  %@",
+//                       event.location.city,
+//                       event.location.state,
+//                       event.location.zip_code)
+//            cell.url.text = "Website"
+//            cell.url.textColor = .systemBlue
+//            createUrl(label: cell.url, urlString: event.event_site_url)
 
             return cell
         }

@@ -33,6 +33,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="barSearch" destination="29i-1B-yse" id="Lu3-a9-KpM"/>
+                        <outlet property="tableView" destination="oPq-sr-OpX" id="dJQ-s4-h56"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

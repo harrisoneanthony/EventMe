@@ -55,12 +55,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="address1" destination="Rfr-n6-8nV" id="Z2r-wE-6eC"/>
-                <outlet property="cityStateZip" destination="gzN-Dt-zrE" id="5Xx-QC-hbL"/>
-                <outlet property="description" destination="3YY-BP-rwe" id="9Be-li-bLG"/>
-                <outlet property="descriptionLabel" destination="3YY-BP-rwe" id="3oQ-Hz-Ogv"/>
-                <outlet property="name" destination="3YY-BP-rwe" id="cbL-Ir-GGQ"/>
-                <outlet property="url" destination="bUN-2q-BNC" id="Ddt-dl-pev"/>
+                <outlet property="address" destination="Rfr-n6-8nV" id="LxC-Cb-ptq"/>
+                <outlet property="cityStateZip" destination="gzN-Dt-zrE" id="N84-f6-ZYL"/>
+                <outlet property="descr" destination="3YY-BP-rwe" id="h26-5n-6pU"/>
+                <outlet property="url" destination="bUN-2q-BNC" id="PiD-zM-wDa"/>
             </connections>
             <point key="canvasLocation" x="-16.030534351145036" y="45.774647887323944"/>
         </tableViewCell>

@@ -10,11 +10,11 @@ import CoreLocation
 
 class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
         
-        @IBOutlet weak var viewAll: UITextView!
-        @IBOutlet var tableView: UITableView!
-        @IBOutlet var barSearch: UISearchBar!
+    @IBOutlet weak var viewAll: UITextView!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var barSearch: UISearchBar!
 
-        var events  = [Events]()
+        var events  = [Event]()
         
         var tableData = ["1", "2", "3", "4"]
         
@@ -27,26 +27,28 @@ class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
             self.setupTable()
             
             self.barSearch.delegate = self
+            
+            self.barSearch.searchTextField.text = "Scituate, MA"
      
         }
-        
-        func fetchEventsFromAddress(_ address: String, completion:@escaping(_ success: Bool, _ events: [Events]?)->()) {
-            
+
+        func fetchEventsFromAddress(_ address: String, completion:@escaping(_ success: Bool, _ events: [Event]?)->()) {
+
             let geocoder = CLGeocoder()
             geocoder.geocodeAddressString(address) {
                 placemarks, error in
-                
+
                 weak var weakSelf = self
-                
+
                 if let placemark = placemarks?.first,
                    let location = placemark.location {
-                    
+
                     let lat = location.coordinate.latitude
                     let lng = location.coordinate.longitude
-                    
+
                     weakSelf?.fetchEvents(lat: lat, lng: lng) {
                         success, events in
-                        
+
                         if success {
                             completion(true, events)
                         } else {
@@ -58,32 +60,32 @@ class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
                 }
                 completion(false, nil)
             }
-            
+
         }
         
-        func fetchEvents(lat: Double, lng: Double, completion: @escaping(_ success: Bool, _ events: [Events]?) -> ()) {
-            
+        func fetchEvents(lat: Double, lng: Double, completion: @escaping(_ success: Bool, _ events: [Event]?) -> ()) {
+
             let headers: HTTPHeaders = [
                     "Authorization" : String(format: "Bearer %@", token),
                     "Content-Type": "application/json"
                 ]
-            
-            AF.request( "https://api.yelp.com/v3/events/search?sort_by=best_match&limit=20&latitude=\(lat)&longitude=\(lng)", headers: headers)
+
+            AF.request( "https://api.yelp.com/v3/events?limit=20&latitude=42.195831&longitude=-70.726387", headers: headers)
                 .response { response in
 
                 if let data = response.data,
                    let jsonString = String(data: data, encoding: .utf8) {
-                    
+
                     print(jsonString)
 
                     if let jsonDecoded = try? JSONDecoder().decode(Events.self, from: data) {
-                        
+
                         if let events = jsonDecoded.events {
                             self.events = events
                             completion(true, events)
                             return
                         }
-                        
+
                     }
 
                 }
@@ -92,29 +94,30 @@ class EventMe: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         }
         
         func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            
+
             guard let searchValue = searchBar.searchTextField.text else {
                 // Print Error Message
                 return
             }
-            
+
             fetchEventsFromAddress(searchValue) {
                 success, events in
-                
+
                 if success,
                    let events = events {
                     self.events = events
+                    print(events)
                     self.tableView.reloadData()
                 } else {
                     //  Print Error Message
                 }
-                
+
             }
         }
-        
+
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             searchBar.searchTextField.text = ""
-            self.events = [Events]()
+            self.events = [Event]()
             self.tableView.reloadData()
         }
     }
